@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
     { path: '/activity', label: 'Track Activity', icon: <ClipboardList className="w-4 h-4" /> },
     { path: '/leaderboard', label: 'Leaderboard', icon: <Trophy className="w-4 h-4" /> },
     { path: '/certificates', label: 'Certificates', icon: <Award className="w-4 h-4" /> },
+    { path: '/monitor', label: 'Live Monitor', icon: <BarChart3 className="w-4 h-4" /> },
   ];
   const reviewerLinks = [{ path: '/reviewer', label: 'Reviewer Portal', icon: <ShieldCheck className="w-4 h-4" /> }];
   const adminLinks = [{ path: '/analytics', label: 'Analytics', icon: <BarChart3 className="w-4 h-4" /> }];
@@ -49,7 +50,7 @@ const Navbar: React.FC = () => {
       <div className="mx-auto max-w-7xl px-3 min-[360px]:px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 min-w-0 items-center justify-between gap-2 sm:gap-3">
           <Link to="/" className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden md:flex-none md:gap-2.5">
-            <span className="truncate whitespace-nowrap font-display text-sm font-bold text-slate-900 min-[360px]:text-base">i-Pledge</span>
+            <span className="truncate whitespace-nowrap font-display text-sm font-bold text-slate-900 min-[360px]:text-base">TerraLedger</span>
             <span className="hidden lg:block text-xs text-slate-400 font-medium">India Carbon Impact</span>
           </Link>
 
@@ -71,11 +72,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="flex flex-shrink-0 items-center gap-1.5 sm:gap-2">
-            {!user && (
-              <Link to="/auth" className="hidden sm:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-brand-700 hover:bg-brand-800 border border-brand-700 rounded-sm transition-colors">
-                Sign In
-              </Link>
-            )}
+            
             {user ? <div className="relative hidden md:block" ref={profileRef}>
               <button
                 type="button"
@@ -103,9 +100,6 @@ const Navbar: React.FC = () => {
                     <User className="w-4 h-4 text-slate-400" />My Profile
                   </Link>
                   <div className="border-t border-slate-100 my-1" />
-                  <button onClick={handleLogout} className="flex items-center gap-2.5 px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md mx-1 w-[calc(100%-8px)] text-left">
-                    <LogOut className="w-4 h-4" />Sign Out
-                  </button>
                 </div>
               )}
             </div> : null}
@@ -134,14 +128,7 @@ const Navbar: React.FC = () => {
               <Link to="/profile" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm text-slate-700 hover:bg-slate-50">
                 <User className="w-4 h-4 text-slate-400" />Profile
               </Link>
-              <button onClick={handleLogout} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm text-red-600 hover:bg-red-50 w-full">
-                <LogOut className="w-4 h-4" />Sign Out
-              </button>
-            </div> : (
-              <Link to="/auth" onClick={() => setMobileOpen(false)} className="mt-3 flex items-center justify-center bg-brand-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-800">
-                Sign in
-              </Link>
-            )}
+            </div> : null}
           </div>
         </div>
       )}

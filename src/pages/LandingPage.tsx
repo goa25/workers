@@ -10,7 +10,7 @@ const features = [
   { icon: BarChart3, t: 'India-Specific Carbon Calculations', d: 'IPCC AR6, GHG Protocol, CPCB and CEA India Grid emission factors, with no guesswork.', c: 'bg-blue-50 text-blue-600' },
   { icon: Award, t: 'Earn Certificates', d: 'Verified participation and annual recognition certificates.', c: 'bg-amber-50 text-amber-600' },
   { icon: Users, t: 'Compete on Leaderboards', d: 'Individual, organisation, city, and school rankings from Mumbai to Guwahati.', c: 'bg-violet-50 text-violet-600' },
-  { icon: Shield, t: 'Verified Impact', d: 'i-Pledge reviewers verify all submitted evidence before CO₂e is counted.', c: 'bg-rose-50 text-rose-600' },
+  { icon: Shield, t: 'Verified Impact', d: 'TerraLedger reviewers verify all submitted evidence before CO₂e is counted.', c: 'bg-rose-50 text-rose-600' },
   { icon: Cpu, t: 'AI-Powered Insights', d: 'Advanced analytics and intelligence for your carbon impact.', c: 'bg-indigo-50 text-indigo-600' },
 ]
 
@@ -24,9 +24,9 @@ const pledgeList = [
 ]
 
 const steps = [
-  { icon: UserPlus, t: 'Sign up in seconds', d: 'Join free with an OTP on your mobile or Microsoft SSO. No app download needed.' },
+  { icon: UserPlus, t: 'Start in seconds', d: 'Pledge instantly, no account wall. Verify by email OTP when you submit evidence.' },
   { icon: Target, t: 'Make your pledges', d: 'Pick from 11 science-backed actions that fit your daily life across India.' },
-  { icon: ClipboardCheck, t: 'Submit evidence', d: 'Upload a photo or reading. i-Pledge reviewers verify before your CO₂e counts.' },
+  { icon: ClipboardCheck, t: 'Submit evidence', d: 'Upload a photo or reading. TerraLedger reviewers verify before your CO₂e counts.' },
   { icon: TrendingUp, t: 'Track & climb', d: 'Watch your savings grow and rise up your city and organisation leaderboards.' },
 ]
 
@@ -46,7 +46,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
         <div className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden sm:gap-3">
-            <span className="truncate font-display text-sm font-bold text-slate-900 sm:text-base">i-Pledge</span>
+            <span className="truncate font-display text-sm font-bold text-slate-900 sm:text-base">TerraLedger</span>
             <span className="hidden md:block text-xs text-slate-400 font-medium">Carbon Impact Platform</span>
           </div>
           <div className="flex flex-shrink-0 items-center gap-1.5 sm:gap-3">
@@ -56,7 +56,7 @@ export default function LandingPage() {
             <button onClick={() => nav('/leaderboard')} className="hidden lg:inline-flex px-3 py-2 text-sm font-semibold text-slate-600 hover:text-brand-700 transition-colors">
               Leaderboard
             </button>
-            <button onClick={() => nav('/auth')} className="inline-flex flex-shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-brand-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:px-4">
+            <button onClick={() => nav('/pledges')} className="inline-flex flex-shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-brand-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:px-4">
               <span className="min-[370px]:hidden">Join</span>
               <span className="hidden min-[370px]:inline">Join Now</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -85,7 +85,7 @@ export default function LandingPage() {
             Choose a practical pledge, record what you did and see the estimated carbon saving. Evidence is reviewed before it is added to the campaign total.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
-            <button onClick={() => nav('/auth')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-display font-semibold text-base sm:text-lg rounded-sm transition-colors">
+            <button onClick={() => nav('/pledges')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-display font-semibold text-base sm:text-lg rounded-sm transition-colors">
               Make a pledge <ArrowRight className="w-5 h-5" />
             </button>
             <button onClick={() => nav('/pledges')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/70 text-white font-display font-semibold text-base sm:text-lg rounded-sm hover:bg-white hover:text-emerald-950 transition-colors">
@@ -194,7 +194,7 @@ export default function LandingPage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <button onClick={() => nav('/auth')} className="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-display font-semibold rounded-xl transition-colors shadow-sm hover:shadow-md">
+            <button onClick={() => nav('/pledges')} className="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-display font-semibold rounded-xl transition-colors shadow-sm hover:shadow-md">
               View All 11 Pledges <ArrowRight className="w-5 h-5" />
             </button>
           </div>
@@ -217,8 +217,8 @@ export default function LandingPage() {
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">Ready to make your pledge?</h2>
           <p className="text-base sm:text-lg text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">Join citizens across India, from metros to small towns, at the Global Sustainability Summit 2026 and beyond.</p>
-          <button onClick={() => nav('/auth')} className="inline-flex items-center gap-2 px-9 py-4 bg-white text-brand-700 font-display font-bold text-lg rounded-xl hover:bg-emerald-50 transition-all hover:-translate-y-0.5 shadow-lg">
-            Join i-Pledge Today <ArrowRight className="w-5 h-5" />
+          <button onClick={() => nav('/pledges')} className="inline-flex items-center gap-2 px-9 py-4 bg-white text-brand-700 font-display font-bold text-lg rounded-xl hover:bg-emerald-50 transition-all hover:-translate-y-0.5 shadow-lg">
+            Join TerraLedger Today <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </section>
@@ -227,11 +227,11 @@ export default function LandingPage() {
       <footer className="bg-slate-900 py-8 text-slate-400 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-5 md:flex-row md:gap-6">
-            <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1" aria-label="i-Pledge Carbon Impact Platform">
-              <span className="font-display font-bold text-white text-sm">i-Pledge</span>
+            <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1" aria-label="TerraLedger Carbon Impact Platform">
+              <span className="font-display font-bold text-white text-sm">TerraLedger</span>
               <span className="hidden text-slate-500 text-xs sm:inline">Carbon Impact Platform</span>
             </div>
-            <div className="max-w-xs text-center text-xs leading-relaxed text-slate-500 sm:text-sm">&copy; 2026 &middot; i-Pledge Carbon Impact Platform</div>
+            <div className="max-w-xs text-center text-xs leading-relaxed text-slate-500 sm:text-sm">&copy; 2026 &middot; TerraLedger Carbon Impact Platform</div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs">
               <a href="#" className="hover:text-white transition-colors">Privacy</a>
               <a href="#" className="hover:text-white transition-colors">Terms</a>

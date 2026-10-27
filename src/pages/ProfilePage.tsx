@@ -52,7 +52,7 @@ const ProfilePage: React.FC = () => {
     <div className="app-page-surface app-page-general min-h-screen py-8 sm:py-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <IndiaPageHeader
-          title={user?.name ?? 'Your i-Pledge Profile'}
+          title={user?.name ?? 'Your TerraLedger Profile'}
           description="Keep your city, State or Union Territory and organisation details current so your contribution appears in the right Indian community rankings."
           imageSrc="/images/profile-neighbourhood.jpg"
           imageAlt="A participant updating their profile in an Indian neighbourhood"
@@ -278,7 +278,7 @@ const ProfilePage: React.FC = () => {
                   <p className="text-sm text-gray-500 mb-4">
                     Your data is processed in compliance with the <strong>GDPR (EU) 2016/679</strong> and the
                     <strong> India Digital Personal Data Protection Act 2023</strong>. Your personal information
-                    is stored on Azure India (Central India region) and is used solely for i-Pledge campaign
+                    is stored on Azure India (Central India region) and is used solely for TerraLedger campaign
                     analytics and certificate issuance.
                   </p>
                   <div className="space-y-2">

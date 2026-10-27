@@ -90,7 +90,7 @@ export default function PledgeCatalog() {
             <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
               <CheckCircle size={18} className="text-white" />
             </div>
-            <span className="text-sm font-medium text-emerald-100 tracking-wide uppercase">i-Pledge · India Campaign</span>
+            <span className="text-sm font-medium text-emerald-100 tracking-wide uppercase">TerraLedger · India Campaign</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold font-display mb-3">I Pledge To…</h1>
           <p className="text-emerald-100 max-w-2xl text-base leading-relaxed">

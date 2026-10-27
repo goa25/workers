@@ -22,7 +22,7 @@ const CertCard: React.FC<{ cert: ApiCertificate }> = ({ cert }) => {
             <Award className="w-7 h-7 text-white" />
           </div>
           <h3 className="text-lg font-display font-bold leading-tight">{cfg.label} Certificate</h3>
-          <p className="text-brand-200 text-sm mt-1">i-Pledge Carbon Platform · 2026</p>
+          <p className="text-brand-200 text-sm mt-1">TerraLedger Carbon Platform · 2026</p>
         </div>
       </div>
       <div className="p-5">

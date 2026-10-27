@@ -1,4 +1,4 @@
-// i-Pledge Carbon Impact Platform: App Context
+// TerraLedger Carbon Impact Platform: App Context
 // Client-side state management with API integration
 
 import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
@@ -107,7 +107,7 @@ interface AppContextValue {
 
 const AppContext = createContext<AppContextValue | null>(null);
 
-const STORAGE_KEY = 'i-pledge-app-state';
+const STORAGE_KEY = 'TerraLedger-app-state';
 
 // pledgeId string -> numeric API id (single source of truth: data/pledges.ts)
 

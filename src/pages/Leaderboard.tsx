@@ -43,7 +43,7 @@ const Leaderboard: React.FC = () => {
       .finally(() => setLoading(false));
   };
 
-  useEffect(() => { load(); }, [activeTab, view, selectedMonth]);
+  useEffect(() => { load(); const t = setInterval(() => { fetchLeaderboard(activeTab as any, view === 'monthly' ? selectedMonth : undefined).then(setData).catch(() => {}); }, 3500); return () => clearInterval(t); }, [activeTab, view, selectedMonth]);
 
   const totalCO2 = data.reduce((a, d) => a + (d as any).total_carbon_saved_kg, 0);
 

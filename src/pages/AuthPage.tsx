@@ -153,7 +153,7 @@ export default function AuthPage({ onAuth }: AuthPageProps) {
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-brand-600 shadow-sm mb-4">
             <Shield className="w-6 h-6 text-white" />
           </div>
-          <h1 className="text-xl font-display font-bold text-slate-900">i-Pledge Carbon Platform</h1>
+          <h1 className="text-xl font-display font-bold text-slate-900">TerraLedger Carbon Platform</h1>
           <p className="text-slate-500 text-sm mt-1">Global Sustainability Summit 2026</p>
         </div>
 

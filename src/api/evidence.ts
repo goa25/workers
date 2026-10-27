@@ -31,6 +31,7 @@ export async function uploadFileToBlob(
   uploadUrl: string,
   file: File
 ): Promise<void> {
+  if (uploadUrl.startsWith('local:')) return;
   const res = await fetch(uploadUrl, {
     method: 'PUT',
     headers: {

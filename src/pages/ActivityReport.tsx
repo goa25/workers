@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import OtpModal from '../components/OtpModal'
 import {
   Upload, CheckCircle, AlertTriangle, ChevronDown, ChevronUp,
   FileText, Calculator, Info, X, Bus, Car, Bike, Thermometer,
@@ -43,6 +44,8 @@ export default function ActivityReport() {
   const [submitError, setSubmitError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [otpOpen, setOtpOpen] = useState(false)
+  const [otpOk, setOtpOk] = useState(false)
   const [expanded, setExpanded] = useState<string | null>(null)
 
   const cfg = activePledgeId ? getPledge(activePledgeId) : undefined
@@ -107,6 +110,7 @@ export default function ActivityReport() {
 
   return (
     <div className="app-page-surface app-page-activity min-h-screen">
+      {otpOpen && <OtpModal onClose={() => setOtpOpen(false)} onVerified={() => { setOtpOk(true); setOtpOpen(false); setTimeout(() => (document.querySelector('form button[type=submit]') as HTMLButtonElement | null)?.click(), 50) }} />}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
 
         <IndiaPageHeader title="Track Your Monthly Activity" description={`Submit evidence for one of the 11 core pledges. ${METHODOLOGY_NOTE}`} imageSrc="/images/activity-evidence.jpg" imageAlt="Residents documenting household energy savings" chips={['11 approved pledges', 'Evidence-led review', 'India-specific factors']} />
@@ -114,7 +118,7 @@ export default function ActivityReport() {
         {submitted && (
           <div className="mb-6 flex items-center gap-3 bg-emerald-50 border border-emerald-200 rounded-xl px-5 py-4 text-emerald-700 font-medium text-sm">
             <CheckCircle className="w-5 h-5 flex-shrink-0" />
-            Submitted! i-Pledge reviewers will verify your evidence within 3–5 business days.
+            Submitted! TerraLedger reviewers will verify your evidence within 3–5 business days.
           </div>
         )}
         {submitError && (
@@ -209,7 +213,7 @@ export default function ActivityReport() {
                   <p className="leading-relaxed">{METHODOLOGY_NOTE}</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={(e) => { if (otpOk) return handleSubmit(e); e.preventDefault(); setOtpOpen(true) }} className="space-y-4">
                   {shownFields.map(field => (
                     <div key={field.key}>
                       <label className="label">

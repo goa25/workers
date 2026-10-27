@@ -1,5 +1,5 @@
-// i-Pledge Carbon Impact Platform: Shared TypeScript Types
-// i-Pledge Initiative
+// TerraLedger Carbon Impact Platform: Shared TypeScript Types
+// TerraLedger Initiative
 
 export type UserRole = 'user' | 'reviewer' | 'admin';
 

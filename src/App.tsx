@@ -1,4 +1,6 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
+import Monitor from './pages/Monitor';
+import EnvioraAgent from './components/EnvioraAgent';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -72,6 +74,8 @@ const App: React.FC = () => {
     });
   };
 
+  const { state: appState } = useApp();
+  useEffect(() => { if (!appState.user) login({ id: 'guest-demo', name: 'Guest Pledger', email: 'guest@terraledger.app', role: 'participant' }); }, []); // eslint-disable-line
   const logout = () => { setUser(null); appLogout(); };
 
   const authValue: AuthContextType = { user, login, logout, isAuthenticated: !!user };
@@ -96,10 +100,12 @@ const App: React.FC = () => {
             <Route path="/profile" element={<ProtectedRoute><AppPage><ProfilePage /></AppPage></ProtectedRoute>} />
             <Route path="/reviewer" element={<ProtectedRoute requireRole="reviewer"><AppPage><ReviewerPortal /></AppPage></ProtectedRoute>} />
             <Route path="/analytics" element={<ProtectedRoute requireRole="admin"><AppPage><CampaignDashboard /></AppPage></ProtectedRoute>} />
+            <Route path="/monitor" element={<AppPage><Monitor /></AppPage>} />
             <Route path="/standards" element={<AppPage><StandardsPage /></AppPage>} />
             <Route path="/appeals" element={<ProtectedRoute><AppPage><AppealsPage /></AppPage></ProtectedRoute>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
+          <EnvioraAgent />
         </div>
       </Router>
     </AuthContext.Provider>

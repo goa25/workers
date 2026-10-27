@@ -15,7 +15,7 @@ interface IndiaPageHeaderProps {
 export default function IndiaPageHeader({
   title,
   description,
-  eyebrow = 'i-Pledge India',
+  eyebrow = 'TerraLedger India',
   chips = [],
   action,
   imageSrc,

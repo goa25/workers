@@ -1,8 +1,8 @@
-// i-Pledge Carbon Impact Platform — Core Pledge Set (11 pledges)
-// Source: "i-Pledge Recommended Core Pledge Set" — prepared for technical review
+// TerraLedger Carbon Impact Platform — Core Pledge Set (11 pledges)
+// Source: "TerraLedger Recommended Core Pledge Set" — prepared for technical review
 // Emission factors: India CEA v21.0 (0.710 kg CO2/kWh), WRI India, IPCC AR6,
 //                   Poore & Nemecek 2018 (food), UK Environment Agency (plastics)
-// i-Pledge Initiative
+// TerraLedger Initiative
 //
 // IMPORTANT: `apiId` and every field `key` below MUST stay in sync with the backend
 // carbon engine (backend/utils/carbonEngine.js) and the Pledges table.
@@ -78,10 +78,10 @@ export interface Pledge {
  * and for technical review only.
  */
 export const METHODOLOGY_NOTE =
-  'Carbon savings are calculated using internationally recognised, industry-standard emission factors, reviewed and approved by the i-Pledge review team.';
+  'Carbon savings are calculated using internationally recognised, industry-standard emission factors, reviewed and approved by the TerraLedger review team.';
 
 export const METHODOLOGY_NOTE_SHORT =
-  'Calculated using industry-standard emission factors, approved by the i-Pledge review team.';
+  'Calculated using industry-standard emission factors, approved by the TerraLedger review team.';
 
 const VEHICLE_OPTIONS = [
   { value: 'car_petrol', label: 'Petrol car' },

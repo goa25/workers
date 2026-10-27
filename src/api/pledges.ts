@@ -1,7 +1,7 @@
 import { apiRequest } from './client';
 
 // GET /pledges
-export interface ApiPledge {
+export interface ApTerraLedger {
   id: number;
   name: string;
   description: string;
@@ -9,8 +9,8 @@ export interface ApiPledge {
   emission_factor: string;
 }
 
-export async function fetchPledges(): Promise<ApiPledge[]> {
-  return apiRequest<ApiPledge[]>('/pledges');
+export async function fetchPledges(): Promise<ApTerraLedger[]> {
+  return apiRequest<ApTerraLedger[]>('/pledges');
 }
 
 // POST /pledges/enroll

@@ -43,7 +43,7 @@ const CampaignDashboard: React.FC = () => {
 
         <IndiaPageHeader
           eyebrow="National campaign view"
-          title="i-Pledge India Analytics"
+          title="TerraLedger India Analytics"
           description="Track verified participation across States and Union Territories, organisations, schools, universities and local communities."
           imageSrc="/images/analytics-team.jpg"
           imageAlt="A diverse team reviewing climate campaign analytics"

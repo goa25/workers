@@ -1,4 +1,4 @@
-// i-Pledge Carbon Platform: API barrel export
+// TerraLedger Carbon Platform: API barrel export
 export * from './client';
 export * from './auth';
 export * from './pledges';
