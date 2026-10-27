@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+          @apply bg-slate-50 text-slate-900 font-sans antialiased;
+          font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+          max-width: 100%;
+          overflow-x: clip;
+      }
+    body::before {
+          content: '';
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+          z-index: -1;
+          background: transparent;
+    }
+        html {
+          max-width: 100%;
+          overflow-x: clip;
+          scroll-behavior: smooth;
+        }
+
+        #root {
+          max-width: 100%;
+          overflow-x: clip;
+        }
+
+    h1, h2, h3, h4, h5, h6 {
+          @apply font-display tracking-tight;
+    }
+
+    ::selection {
+          @apply bg-brand-100 text-brand-900;
+    }
+    }
+
+@layer components {
+    /* ── Buttons ── */
+    .btn-primary {
+          @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-600 text-white
+            font-semibold text-sm rounded-sm shadow-none
+            hover:bg-brand-700 active:bg-brand-800
+            transition-all duration-200
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+            disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none;
+    }
+    .btn-primary-lg {
+          @apply inline-flex items-center gap-2 px-7 py-3.5 bg-brand-600 text-white
+            font-semibold text-base rounded-sm shadow-none
+            hover:bg-brand-700 active:bg-brand-800
+            transition-all duration-150
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+            disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+    .btn-secondary {
+          @apply inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-700
+            font-semibold text-sm rounded-sm border border-slate-400
+            hover:bg-slate-50 hover:border-slate-700 active:bg-slate-100
+            transition-colors duration-150 shadow-none
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2;
+    }
+    .btn-ghost {
+          @apply inline-flex items-center gap-2 px-4 py-2 text-slate-600
+            font-medium text-sm rounded-sm
+            hover:bg-slate-100 hover:text-slate-900
+            transition-all duration-150;
+    }
+    .btn-azure {
+          @apply inline-flex items-center gap-2 px-5 py-2.5 bg-azure-600 text-white
+            font-semibold text-sm rounded-sm shadow-none
+            hover:bg-azure-700 transition-all duration-150;
+    }
+    .btn-danger {
+          @apply inline-flex items-center gap-2 px-5 py-2.5 bg-red-600 text-white
+            font-semibold text-sm rounded-sm shadow-none
+            hover:bg-red-700 transition-all duration-150;
+    }
+
+    /* ── Cards ── */
+    .card {
+          @apply bg-white rounded-sm shadow-none border border-slate-300 overflow-hidden;
+    }
+    .card-hover {
+          @apply card hover:border-slate-500 transition-colors duration-150 cursor-pointer;
+    }
+    .card-flat {
+          @apply bg-white rounded-sm border border-slate-300 overflow-hidden;
+    }
+
+    /* ── Form ── */
+    .input {
+          @apply w-full px-3.5 py-2.5 rounded-sm border border-slate-400 bg-white
+            text-sm text-slate-900 placeholder-slate-400
+            focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500
+            transition-all duration-150;
+    }
+    .select {
+          @apply input appearance-none pr-9;
+    }
+    .label {
+          @apply block text-sm font-medium text-slate-700 mb-1.5;
+      }
+
+        /* ── Badges ── */
+        .badge {
+              @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold;
+        }
+    .badge-green { @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200; }
+    .badge-blue  { @apply badge bg-blue-50 text-blue-700 border border-blue-200; }
+    .badge-amber { @apply badge bg-amber-50 text-amber-700 border border-amber-200; }
+    .badge-red   { @apply badge bg-red-50 text-red-700 border border-red-200; }
+    .badge-slate { @apply badge bg-slate-100 text-slate-600 border border-slate-200; }
+
+    /* ── Typography ── */
+    .section-heading {
+          @apply text-3xl md:text-4xl font-display font-bold text-slate-900 tracking-tight;
+    }
+    .section-subheading {
+          @apply text-lg text-slate-500 leading-relaxed;
+    }
+    .page-title {
+          @apply text-2xl font-display font-bold text-slate-900 tracking-tight;
+    }
+
+    /* ── Stat cards ── */
+    .stat-card {
+          @apply bg-white rounded-sm border border-slate-300 p-5 shadow-none
+            transition-colors duration-150 hover:border-brand-500;
+    }
+
+    /* ── Table ── */
+    .table-base {
+          @apply w-full text-sm text-slate-700;
+    }
+    .table-base thead {
+          @apply bg-slate-50 border-b border-slate-200;
+    }
+    .table-base thead th {
+          @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500;
+    }
+    .table-base tbody td {
+          @apply px-4 py-3.5 border-b border-slate-100;
+    }
+    .table-base tbody tr:last-child td {
+          @apply border-b-0;
+    }
+    .table-base tbody tr:hover td {
+          @apply bg-slate-50;
+    }
+
+    /* ── Status Pills ── */
+    .status-verified {
+          @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold
+            bg-emerald-50 text-emerald-700 border border-emerald-200;
+    }
+    .status-pending {
+          @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold
+            bg-amber-50 text-amber-700 border border-amber-200;
+    }
+    .status-rejected {
+          @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold
+            bg-red-50 text-red-700 border border-red-200;
+    }
+    .status-flagged {
+          @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold
+            bg-orange-50 text-orange-700 border border-orange-200;
+    }
+
+    /* ── Tab nav ── */
+    .tab-group {
+          @apply flex gap-0 bg-white p-0 rounded-sm border border-slate-300;
+    }
+    .tab-item {
+          @apply flex items-center gap-1.5 px-3.5 py-2 rounded-none text-sm font-medium
+            text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors cursor-pointer;
+    }
+    .tab-item-active {
+          @apply bg-brand-700 text-white shadow-none font-semibold;
+    }
+
+    /* ── Empty state ── */
+    .empty-state {
+          @apply flex flex-col items-center justify-center py-16 px-6 text-slate-500 gap-3 rounded-sm border border-slate-300 bg-white;
+    }
+
+    /* ── Navigation link ── */
+    .nav-link {
+          @apply flex items-center gap-1.5 px-3 py-2 rounded-none text-sm font-medium
+            text-slate-600 hover:text-slate-900 transition-colors;
+    }
+    .nav-link-active {
+          @apply border-b-2 border-brand-700 text-brand-800 font-semibold;
+    }
+
+    /* ── Divider ── */
+    .divider {
+          @apply border-t border-slate-200;
+    }
+
+    .leaderboard-table > * {
+          @apply min-w-[42rem];
+    }
+
+    .page-hero img { @apply transition-none; }
+
+    .app-page-surface {
+          @apply bg-slate-100;
+          background-attachment: fixed;
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-size: cover;
+    }
+
+    .app-page-pledges {
+          background-image:
+            linear-gradient(180deg, rgba(241, 245, 249, 0.76), rgba(226, 232, 240, 0.88)),
+            url('/images/india-community-climate-action.jpg');
+    }
+
+    .app-page-general {
+          background-image:
+            linear-gradient(180deg, rgba(241, 245, 249, 0.78), rgba(226, 232, 240, 0.90)),
+            url('/images/profile-neighbourhood.jpg');
+    }
+
+    .app-page-activity {
+          background-image:
+            linear-gradient(180deg, rgba(241, 245, 249, 0.74), rgba(226, 232, 240, 0.89)),
+            url('/images/activity-evidence.jpg');
+    }
+
+    .app-page-reviewer {
+          background-image:
+            linear-gradient(180deg, rgba(241, 245, 249, 0.72), rgba(226, 232, 240, 0.88)),
+            url('/images/reviewer-office.jpg');
+    }
+
+.pledge-card {
+  background-clip: padding-box;
+}
+
+.pledge-evidence-preview {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .app-page-surface { background-attachment: scroll; }
+}
+
+@layer utilities {
+    .text-gradient-brand {
+          @apply text-brand-700;
+          background: none;
+    }
+    .text-gradient-cool {
+          @apply text-azure-700;
+          background: none;
+    }
+    .bg-grid-pattern {
+          background-image:
+                  linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px);
+          background-size: 32px 32px;
+    }
+    .glass {
+          @apply bg-white border border-slate-300;
+    }
+    .glass-dark {
+          @apply bg-slate-900 border border-slate-700;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-400; }
+
+/* Focus ring for keyboard nav */
+:focus-visible {
+    outline: 2px solid theme('colors.brand.500');
+    outline-offset: 2px;
+}
+  
